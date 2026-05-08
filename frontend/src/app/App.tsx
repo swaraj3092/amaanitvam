@@ -4,11 +4,12 @@ import { LandingScreen } from './components/LandingScreen';
 import { ChatScreen } from './components/ChatScreen';
 import { DesktopLandingScreen } from './components/DesktopLandingScreen';
 import { DesktopChatScreen } from './components/DesktopChatScreen';
+import { AboutScreen } from './components/AboutScreen';
 import { VolunteerModal } from './components/VolunteerModal';
 import { SuccessModal } from './components/SuccessModal';
 import { useIsMobile } from './components/ui/use-mobile';
 
-type Screen = 'landing' | 'chat';
+type Screen = 'landing' | 'chat' | 'about';
 type Modal = 'volunteer' | 'success' | null;
 
 export default function App() {
@@ -45,7 +46,7 @@ export default function App() {
         setScreen('chat');
         break;
       case 'about':
-        // Do nothing for now
+        setScreen('about');
         break;
     }
   };
@@ -57,6 +58,7 @@ export default function App() {
         <div className="flex-1 h-full">
           {screen === 'landing' && <LandingScreen onStart={handleStart} />}
           {screen === 'chat' && <ChatScreen onVolunteerClick={handleVolunteerClick} />}
+          {screen === 'about' && <AboutScreen />}
         </div>
       ) : (
         /* Desktop Layout - Sidebar + Content */
@@ -65,6 +67,7 @@ export default function App() {
           <div className="flex-1 h-full">
             {screen === 'landing' && <DesktopLandingScreen onStart={handleStart} />}
             {screen === 'chat' && <DesktopChatScreen onVolunteerClick={handleVolunteerClick} />}
+            {screen === 'about' && <AboutScreen />}
           </div>
         </>
       )}

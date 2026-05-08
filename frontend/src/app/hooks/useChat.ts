@@ -1,15 +1,32 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export interface Message {
   role: 'user' | 'bot';
   content: string;
 }
 
+const STORAGE_KEY = 'amaanitvam_chat_history';
+
 export function useChat() {
-  const [messages, setMessages] = useState<Message[]>([
-    { role: 'bot', content: "Namaste 🙏 I'm Amaani, the voice of Amaanitvam Foundation. How can I help you today?" }
-  ]);
+  const [messages, setMessages] = useState<Message[]>(() => {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) {
+      try {
+        return JSON.parse(saved);
+      } catch (e) {
+        console.error('Failed to parse chat history');
+      }
+    }
+    return [
+      { role: 'bot', content: "Namaste 🙏 I'm Amaani, the voice of Amaanitvam Foundation. How can I help you today?" }
+    ];
+  });
+  
   const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(messages));
+  }, [messages]);
 
   const sendMessage = async (text: string) => {
     if (!text.trim()) return;
