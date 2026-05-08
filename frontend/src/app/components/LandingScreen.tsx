@@ -2,16 +2,19 @@ import { ProjectCard } from './ProjectCard';
 import { motion } from 'framer-motion';
 import { Sparkles } from 'lucide-react';
 
+import { TopBar } from './TopBar';
+
 interface LandingScreenProps {
   onStart: () => void;
 }
 
 export function LandingScreen({ onStart }: LandingScreenProps) {
   return (
-    <div
-      className="w-full h-full flex flex-col items-center justify-center px-6 overflow-y-auto"
-      style={{ background: '#FFF8F5' }}
-    >
+    <div className="w-full h-full flex flex-col" style={{ background: '#FFF8F5' }}>
+      <TopBar />
+      <div
+        className="flex-1 flex flex-col items-center justify-center px-6 overflow-y-auto"
+      >
       <motion.div 
         className="flex-1 flex flex-col items-center justify-center py-12 w-full max-w-[400px]"
         initial={{ opacity: 0, y: 30 }}
@@ -100,15 +103,16 @@ export function LandingScreen({ onStart }: LandingScreenProps) {
         </motion.button>
       </motion.div>
 
-      <motion.div
-        className="pb-6"
-        style={{ fontSize: '11px', color: '#D4537E', opacity: 0.6 }}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1 }}
-      >
-        Powered by AI
-      </motion.div>
+        <motion.div
+          className="pb-6"
+          style={{ fontSize: '11px', color: '#D4537E', opacity: 0.6 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1 }}
+        >
+          Powered by AI
+        </motion.div>
+      </div>
     </div>
   );
 }
