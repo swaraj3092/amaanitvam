@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Sidebar } from './components/Sidebar';
 import { LandingScreen } from './components/LandingScreen';
 import { ChatScreen } from './components/ChatScreen';
@@ -38,6 +38,12 @@ export default function App() {
         break;
     }
   };
+
+  useEffect(() => {
+    const handleNav = (e: any) => handleNavigate(e.detail);
+    window.addEventListener('navigate', handleNav);
+    return () => window.removeEventListener('navigate', handleNav);
+  }, []);
 
   return (
     <div className="w-full h-screen flex relative overflow-hidden" style={{ background: '#FFF8F5' }}>
