@@ -23,17 +23,28 @@ export function BotBubble({ message, timestamp }: BotBubbleProps) {
       setIsPlaying(false);
     } else {
       window.speechSynthesis.cancel(); 
-      const cleanMessage = message.replace(/\*\*/g, '').replace(/\*/g, '');
+      // Strip markdown and emojis
+      const cleanMessage = message
+        .replace(/\*\*/g, '')
+        .replace(/\*/g, '')
+        .replace(/[\u{1F300}-\u{1F9FF}]|[\u{2600}-\u{26FF}]|[\u{2700}-\u{27BF}]|[\u{1F600}-\u{1F64F}]|[\u{1F680}-\u{1F6FF}]|[\u{1FA00}-\u{1FAFF}]/gu, '')
+        .trim();
+        
       const utterance = new SpeechSynthesisUtterance(cleanMessage);
       
       const voices = window.speechSynthesis.getVoices();
-      const standardVoice = voices.find(v => v.name.includes('Google UK English Female') || v.name.includes('Google US English'));
       
-      if (standardVoice) {
-         utterance.voice = standardVoice;
+      // Try to find an Indian Male voice (like Microsoft Ravi, Google UK English Male, or any generic en-IN)
+      const indianVoice = voices.find(v => 
+        (v.lang === 'en-IN' && (v.name.toLowerCase().includes('male') || v.name.toLowerCase().includes('ravi'))) ||
+        v.name.toLowerCase().includes('indian english male')
+      ) || voices.find(v => v.lang === 'en-IN') || voices.find(v => v.lang.startsWith('en'));
+      
+      if (indianVoice) {
+         utterance.voice = indianVoice;
       }
       
-      utterance.pitch = 1.1; 
+      utterance.pitch = 1.0; 
       utterance.rate = 0.95;
       
       utterance.onend = () => setIsPlaying(false);
