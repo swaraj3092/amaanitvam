@@ -56,7 +56,7 @@ export function DonateScreen() {
               transition={{ delay: 0.5 }}
             >
               <a 
-                href="https://amaanitvam.org" 
+                href="https://www.amaanitvam.org/donate/" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full py-4 rounded-xl flex items-center justify-center gap-2 group transition-all"
