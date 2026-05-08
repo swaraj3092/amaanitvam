@@ -53,13 +53,13 @@ export function VolunteerScreen() {
               transition={{ delay: 0.5 }}
             >
               <a 
-                href="https://www.amaanitvam.org/ways-to-help/" 
+                href="https://docs.google.com/forms/d/e/1FAIpQLSfeYkrNqw7eXnbeOVjVbAImPOapukInKOZ05FU3UIDdtv3hXA/viewform" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full py-4 rounded-xl flex items-center justify-center gap-2 group transition-all"
                 style={{ background: '#C9821A', color: 'white', fontSize: '16px', fontWeight: 600 }}
               >
-                Join the Movement via Official Site
+                Apply to Volunteer (Google Form)
                 <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
               </a>
             </motion.div>
