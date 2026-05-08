@@ -9,7 +9,7 @@ export function Sidebar({ onNavigate }: SidebarProps) {
 
   const navItems = [
     { id: 'home', label: 'Home' },
-    { id: 'projects', label: 'Projects' },
+    { id: 'projects', label: 'Chat with Amaani' },
     { id: 'donate', label: 'Donate' },
     { id: 'volunteer', label: 'Volunteer' },
     { id: 'about', label: 'About' }
@@ -22,26 +22,28 @@ export function Sidebar({ onNavigate }: SidebarProps) {
 
   return (
     <div
-      className="w-[260px] h-full flex flex-col"
+      className="w-[320px] h-full flex flex-col shadow-xl z-20"
       style={{ background: '#6B1A35' }}
     >
       {/* Logo Section */}
-      <div className="pt-8 pb-12 flex flex-col items-center">
+      <div className="pt-10 pb-14 flex flex-col items-center">
         <div
-          className="w-12 h-12 rounded-full flex items-center justify-center mb-3"
+          className="w-16 h-16 rounded-full flex items-center justify-center mb-4"
           style={{
             background: '#FFF0F3',
             border: '0.5px solid #E8C0CC'
           }}
         >
-          <span className="text-2xl">🪷</span>
+          <span className="text-3xl">🪷</span>
         </div>
         <div
           style={{
             fontFamily: 'var(--font-heading)',
-            fontSize: '15px',
+            fontSize: '20px',
+            fontWeight: 600,
             color: '#FFF0F3',
-            textAlign: 'center'
+            textAlign: 'center',
+            letterSpacing: '0.5px'
           }}
         >
           Amaanitvam
@@ -49,17 +51,18 @@ export function Sidebar({ onNavigate }: SidebarProps) {
       </div>
 
       {/* Navigation Links */}
-      <nav className="flex-1 px-4">
+      <nav className="flex-1 px-6">
         {navItems.map((item, index) => (
           <div key={item.id}>
             <button
               onClick={() => handleNavClick(item.id)}
-              className="w-full text-left px-4 py-3 mb-1 relative group"
+              className="w-full text-left px-5 py-4 mb-2 relative group"
               style={{
-                fontSize: '13px',
+                fontSize: '16px',
+                fontWeight: 500,
                 color: '#FFF0F3',
                 opacity: activePage === item.id ? 1 : 0.75,
-                borderLeft: activePage === item.id ? '3px solid #D4537E' : '3px solid transparent',
+                borderLeft: activePage === item.id ? '4px solid #D4537E' : '4px solid transparent',
                 borderRadius: '8px',
                 transition: 'all 0.2s'
               }}
