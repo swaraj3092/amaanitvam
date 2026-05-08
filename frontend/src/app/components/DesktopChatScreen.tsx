@@ -27,7 +27,7 @@ export function DesktopChatScreen({ onVolunteerClick }: DesktopChatScreenProps) 
 
   return (
     <div className="w-full h-full flex justify-center" style={{ background: '#FFF8F5' }}>
-      <div className="w-full max-w-[720px] h-full flex flex-col">
+      <div className="w-full max-w-[1000px] h-full flex flex-col">
         <TopBar />
 
         <div className="flex-1 overflow-y-auto p-4" style={{ gap: '16px' }}>
