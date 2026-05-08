@@ -46,52 +46,23 @@ export function VolunteerScreen() {
               Fill in your details to become an Amaanitvam Volunteer. We will reach out to you with upcoming ground initiatives!
             </motion.p>
             
-            <motion.form 
-              className="w-full space-y-6"
+            <motion.div 
+              className="w-full space-y-4 mt-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              onSubmit={(e) => { e.preventDefault(); alert('Application Sent Successfully!'); }}
             >
-              <div className="space-y-4">
-                <div className="relative">
-                  <input
-                    type="text"
-                    required
-                    placeholder="Full Name"
-                    className="w-full px-4 py-4 rounded-xl outline-none transition-shadow focus:ring-2 focus:ring-[#D4537E]"
-                    style={{ background: '#FFF8F5', color: '#6B1A35', border: '1px solid #E8C0CC' }}
-                  />
-                </div>
-                <div className="relative">
-                  <input
-                    type="email"
-                    required
-                    placeholder="Email Address"
-                    className="w-full px-4 py-4 rounded-xl outline-none transition-shadow focus:ring-2 focus:ring-[#D4537E]"
-                    style={{ background: '#FFF8F5', color: '#6B1A35', border: '1px solid #E8C0CC' }}
-                  />
-                </div>
-                <div className="relative">
-                  <input
-                    type="tel"
-                    required
-                    placeholder="Phone Number"
-                    className="w-full px-4 py-4 rounded-xl outline-none transition-shadow focus:ring-2 focus:ring-[#D4537E]"
-                    style={{ background: '#FFF8F5', color: '#6B1A35', border: '1px solid #E8C0CC' }}
-                  />
-                </div>
-              </div>
-
-              <button 
-                type="submit"
+              <a 
+                href="https://www.amaanitvam.org/ways-to-help/" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full py-4 rounded-xl flex items-center justify-center gap-2 group transition-all"
                 style={{ background: '#C9821A', color: 'white', fontSize: '16px', fontWeight: 600 }}
               >
-                Submit Application
+                Join the Movement via Official Site
                 <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-              </button>
-            </motion.form>
+              </a>
+            </motion.div>
           </div>
         </motion.div>
       </div>
