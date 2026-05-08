@@ -92,16 +92,27 @@ export function Sidebar({ onNavigate }: SidebarProps) {
       </nav>
 
       {/* Footer */}
-      <div
-        className="pb-6 text-center px-4"
-        style={{
-          fontSize: '10px',
-          color: '#FFF0F3',
-          opacity: 0.4,
-          lineHeight: '1.4'
-        }}
-      >
-        Made for Amaanitvam Foundation
+      <div className="pb-6 px-4 flex flex-col items-center">
+        <a 
+          href="https://amaanitvam.org" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="mb-4 text-sm hover:underline transition-all flex items-center gap-1"
+          style={{ color: '#E8C0CC' }}
+        >
+          Visit Original Website ↗
+        </a>
+        <div
+          className="text-center"
+          style={{
+            fontSize: '10px',
+            color: '#FFF0F3',
+            opacity: 0.4,
+            lineHeight: '1.4'
+          }}
+        >
+          Made for Amaanitvam Foundation
+        </div>
       </div>
     </div>
   );

@@ -5,32 +5,18 @@ import { ChatScreen } from './components/ChatScreen';
 import { DesktopLandingScreen } from './components/DesktopLandingScreen';
 import { DesktopChatScreen } from './components/DesktopChatScreen';
 import { AboutScreen } from './components/AboutScreen';
-import { VolunteerModal } from './components/VolunteerModal';
-import { SuccessModal } from './components/SuccessModal';
+import { DonateScreen } from './components/DonateScreen';
+import { VolunteerScreen } from './components/VolunteerScreen';
 import { useIsMobile } from './components/ui/use-mobile';
 
-type Screen = 'landing' | 'chat' | 'about';
-type Modal = 'volunteer' | 'success' | null;
+type Screen = 'landing' | 'chat' | 'about' | 'donate' | 'volunteer';
 
 export default function App() {
   const isMobile = useIsMobile();
   const [screen, setScreen] = useState<Screen>('landing');
-  const [modal, setModal] = useState<Modal>(null);
 
   const handleStart = () => {
     setScreen('chat');
-  };
-
-  const handleVolunteerClick = () => {
-    setModal('volunteer');
-  };
-
-  const handleVolunteerSubmit = () => {
-    setModal('success');
-  };
-
-  const handleCloseModal = () => {
-    setModal(null);
   };
 
   const handleNavigate = (page: string) => {
@@ -38,9 +24,11 @@ export default function App() {
       case 'home':
         setScreen('landing');
         break;
-      case 'volunteer':
       case 'donate':
-        setModal('volunteer');
+        setScreen('donate');
+        break;
+      case 'volunteer':
+        setScreen('volunteer');
         break;
       case 'projects':
         setScreen('chat');
@@ -57,8 +45,10 @@ export default function App() {
         /* Mobile Layout - No Sidebar */
         <div className="flex-1 h-full">
           {screen === 'landing' && <LandingScreen onStart={handleStart} />}
-          {screen === 'chat' && <ChatScreen onVolunteerClick={handleVolunteerClick} />}
+          {screen === 'chat' && <ChatScreen onVolunteerClick={() => setScreen('volunteer')} />}
           {screen === 'about' && <AboutScreen />}
+          {screen === 'donate' && <DonateScreen />}
+          {screen === 'volunteer' && <VolunteerScreen />}
         </div>
       ) : (
         /* Desktop Layout - Sidebar + Content */
@@ -66,18 +56,13 @@ export default function App() {
           <Sidebar onNavigate={handleNavigate} />
           <div className="flex-1 h-full">
             {screen === 'landing' && <DesktopLandingScreen onStart={handleStart} />}
-            {screen === 'chat' && <DesktopChatScreen onVolunteerClick={handleVolunteerClick} />}
+            {screen === 'chat' && <DesktopChatScreen onVolunteerClick={() => setScreen('volunteer')} />}
             {screen === 'about' && <AboutScreen />}
+            {screen === 'donate' && <DonateScreen />}
+            {screen === 'volunteer' && <VolunteerScreen />}
           </div>
         </>
       )}
-
-      {/* Modals */}
-      {modal === 'volunteer' && (
-        <VolunteerModal onClose={handleCloseModal} onSubmit={handleVolunteerSubmit} />
-      )}
-
-      {modal === 'success' && <SuccessModal onClose={handleCloseModal} />}
     </div>
   );
 }
