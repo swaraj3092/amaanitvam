@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Heart, Users, Globe2, Sparkles } from 'lucide-react';
+import { Heart, Users, BookOpen, Sparkles } from 'lucide-react';
 import { TopBar } from './TopBar';
 
 export function AboutScreen() {
@@ -7,7 +7,7 @@ export function AboutScreen() {
     hidden: { opacity: 0 },
     visible: { 
       opacity: 1,
-      transition: { staggerChildren: 0.1 }
+      transition: { staggerChildren: 0.15 }
     }
   };
 
@@ -21,79 +21,82 @@ export function AboutScreen() {
   };
 
   return (
-    <div className="w-full h-full flex justify-center" style={{ background: '#FFF8F5' }}>
-      <div className="w-full h-full flex flex-col px-4 md:px-8 lg:px-16 overflow-y-auto">
-        <div className="sticky top-0 z-10">
-          <TopBar />
-        </div>
-
+    <div className="w-full h-full flex flex-col" style={{ background: '#FFF8F5' }}>
+      <TopBar />
+      
+      <div className="flex-1 overflow-y-auto px-4 md:px-8 lg:px-16 pb-16">
         <motion.div 
-          className="max-w-4xl mx-auto w-full py-12 px-4"
+          className="max-w-4xl mx-auto w-full pt-12"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
-          <motion.div variants={itemVariants} className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl mb-4 font-bold" style={{ color: '#6B1A35', fontFamily: 'var(--font-heading)' }}>
-              Empowering Communities,<br/>Transforming Lives
+          {/* Header Section */}
+          <motion.div variants={itemVariants} className="text-center mb-16 relative">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-pink-100 rounded-full blur-3xl opacity-50 pointer-events-none"></div>
+            <h3 className="text-sm tracking-widest uppercase mb-3 font-semibold" style={{ color: '#D4537E' }}>
+              About Us
+            </h3>
+            <h1 className="text-5xl md:text-6xl mb-6 font-bold" style={{ color: '#6B1A35', fontFamily: 'var(--font-heading)' }}>
+              WHO WE <span style={{ color: '#D4537E' }}>ARE</span>
             </h1>
-            <p className="text-lg md:text-xl max-w-2xl mx-auto" style={{ color: '#D4537E' }}>
-              Amaanitvam Foundation is dedicated to driving sustainable social change through education, leadership, and grassroots empowerment.
+            <div className="flex justify-center items-center gap-4 mb-6">
+              <div className="h-0.5 w-12" style={{ background: '#D4537E' }}></div>
+              <div className="w-2 h-2 rotate-45" style={{ background: '#D4537E' }}></div>
+              <div className="h-0.5 w-12" style={{ background: '#D4537E' }}></div>
+            </div>
+            <p className="text-lg md:text-xl max-w-2xl mx-auto" style={{ color: '#6B1A35', lineHeight: '1.6' }}>
+              "Humanity is Everything – together we create opportunities, spread kindness, and turn hope into action for those who need it most."
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+          <div className="space-y-8">
+            {/* What We Do Section */}
             <motion.div 
               variants={itemVariants}
-              className="p-8 rounded-3xl"
-              style={{ background: '#FFFFFF', border: '1px solid #E8C0CC' }}
+              className="p-8 md:p-10 rounded-3xl transition-transform hover:-translate-y-1"
+              style={{ background: '#FFFFFF', border: '1px solid #E8C0CC', boxShadow: '0 10px 30px rgba(107, 26, 53, 0.05)' }}
             >
-              <div className="w-12 h-12 rounded-full flex items-center justify-center mb-6" style={{ background: '#FFF0F3' }}>
-                <Sparkles size={24} style={{ color: '#6B1A35' }} />
+              <div className="flex items-start gap-5">
+                <div className="w-14 h-14 shrink-0 rounded-full flex items-center justify-center" style={{ background: '#FFF0F3' }}>
+                  <Heart size={28} style={{ color: '#D4537E' }} />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold mb-3" style={{ color: '#6B1A35', fontFamily: 'var(--font-heading)' }}>What We Do</h3>
+                  <p style={{ color: '#885164', lineHeight: '1.6' }}>
+                    We actively bridge the gap in underprivileged communities by launching targeted initiatives. Our focus is on long-term, self-sustaining growth that empowers individuals rather than just offering temporary relief. Through dedicated on-ground volunteering, we transform hope into measurable action.
+                  </p>
+                </div>
               </div>
-              <h3 className="text-2xl font-bold mb-3" style={{ color: '#6B1A35' }}>Our Vision</h3>
-              <p style={{ color: '#885164', lineHeight: '1.6' }}>
-                To create a world where every individual, regardless of their background, has access to quality education, leadership opportunities, and the resources needed to realize their full potential.
-              </p>
             </motion.div>
 
+            {/* Our Initiatives (Stories/Programs) */}
             <motion.div 
               variants={itemVariants}
-              className="p-8 rounded-3xl"
-              style={{ background: '#FFFFFF', border: '1px solid #E8C0CC' }}
+              className="p-8 md:p-10 rounded-3xl transition-transform hover:-translate-y-1"
+              style={{ background: '#FFFFFF', border: '1px solid #E8C0CC', boxShadow: '0 10px 30px rgba(107, 26, 53, 0.05)' }}
             >
-              <div className="w-12 h-12 rounded-full flex items-center justify-center mb-6" style={{ background: '#FFF0F3' }}>
-                <Heart size={24} style={{ color: '#6B1A35' }} />
+              <div className="flex items-start gap-5">
+                <div className="w-14 h-14 shrink-0 rounded-full flex items-center justify-center" style={{ background: '#FFF0F3' }}>
+                  <BookOpen size={28} style={{ color: '#D4537E' }} />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold mb-3" style={{ color: '#6B1A35', fontFamily: 'var(--font-heading)' }}>Our Stories & Initiatives</h3>
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="font-semibold text-lg" style={{ color: '#6B1A35' }}>Project Shiksha</h4>
+                      <p style={{ color: '#885164', lineHeight: '1.5' }}>Providing accessible, high-quality education and foundational knowledge to children in marginalized communities.</p>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-lg" style={{ color: '#6B1A35' }}>Project Manthan</h4>
+                      <p style={{ color: '#885164', lineHeight: '1.5' }}>A dedicated youth leadership program designed to mentor the next generation of changemakers and community organizers.</p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-2xl font-bold mb-3" style={{ color: '#6B1A35' }}>Our Mission</h3>
-              <p style={{ color: '#885164', lineHeight: '1.6' }}>
-                We actively bridge the gap in underprivileged communities by launching targeted initiatives like Project Shiksha and Project Manthan to foster long-term, self-sustaining growth.
-              </p>
             </motion.div>
+
           </div>
-
-          <motion.div variants={itemVariants} className="mb-12">
-            <h2 className="text-3xl font-bold mb-8 text-center" style={{ color: '#6B1A35', fontFamily: 'var(--font-heading)' }}>
-              Core Initiatives
-            </h2>
-            <div className="space-y-6">
-              <div className="p-6 rounded-2xl flex items-start gap-4 transition-transform hover:-translate-y-1" style={{ background: '#FFFFFF', border: '1px solid #E8C0CC' }}>
-                <div className="mt-1"><Users size={24} style={{ color: '#D4537E' }} /></div>
-                <div>
-                  <h4 className="text-xl font-bold mb-2" style={{ color: '#6B1A35' }}>Project Shiksha</h4>
-                  <p style={{ color: '#885164' }}>Providing accessible, high-quality education to children in marginalized communities to ensure they have the foundational knowledge to succeed.</p>
-                </div>
-              </div>
-              <div className="p-6 rounded-2xl flex items-start gap-4 transition-transform hover:-translate-y-1" style={{ background: '#FFFFFF', border: '1px solid #E8C0CC' }}>
-                <div className="mt-1"><Globe2 size={24} style={{ color: '#D4537E' }} /></div>
-                <div>
-                  <h4 className="text-xl font-bold mb-2" style={{ color: '#6B1A35' }}>Project Manthan</h4>
-                  <p style={{ color: '#885164' }}>A dedicated youth leadership program designed to mentor the next generation of changemakers, teaching them critical thinking and community organization.</p>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
         </motion.div>
       </div>
     </div>
