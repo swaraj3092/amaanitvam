@@ -18,12 +18,12 @@ export function LandingScreen({ onStart }: LandingScreenProps) {
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <motion.div
-          className="w-24 h-24 rounded-full flex items-center justify-center mb-4 shadow-sm"
+          className="w-24 h-24 rounded-full flex items-center justify-center mb-4 shadow-sm overflow-hidden"
           style={{ background: '#FFF0F3', border: '1.5px solid #D4537E' }}
           whileHover={{ scale: 1.1, rotate: 10 }}
           transition={{ type: "spring", stiffness: 300 }}
         >
-          <span className="text-[40px]">🪷</span>
+          <img src="/logo.png" alt="Amaanitvam Logo" className="w-full h-full object-cover" />
         </motion.div>
 
         <h1
@@ -96,7 +96,7 @@ export function LandingScreen({ onStart }: LandingScreenProps) {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          Talk to Amaani 🪷
+          Talk to Amaani
         </motion.button>
       </motion.div>
 
