@@ -82,7 +82,7 @@ export function BotBubble({ message, timestamp }: BotBubbleProps) {
             background: '#FFFFFF',
             border: '0.5px solid #E8C0CC',
             borderRadius: '16px 16px 16px 4px',
-            fontSize: '13px',
+            fontSize: '15px',
             lineHeight: '1.6',
             color: '#3A0A1A'
           }}

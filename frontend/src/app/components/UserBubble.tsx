@@ -20,11 +20,10 @@ export function UserBubble({ message, timestamp }: UserBubbleProps) {
           className="px-3.5 py-2.5"
           style={{
             background: '#6B1A35',
-            border: '0.5px solid #6B1A35',
             borderRadius: '16px 16px 4px 16px',
-            fontSize: '13px',
+            fontSize: '15px',
             lineHeight: '1.6',
-            color: '#FFF0F3'
+            color: '#FFFFFF'
           }}
         >
           {message}
