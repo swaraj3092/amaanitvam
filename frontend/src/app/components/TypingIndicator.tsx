@@ -7,8 +7,8 @@ export function TypingIndicator({ visible }: TypingIndicatorProps) {
 
   return (
     <div className="flex gap-2 items-start mb-4">
-      <div className="w-8 h-8 rounded-full flex items-center justify-center shrink-0" style={{ background: '#FFF0F3', border: '0.5px solid #E8C0CC' }}>
-        <span className="text-base">🪷</span>
+      <div className="w-8 h-8 rounded-full flex items-center justify-center shrink-0 overflow-hidden" style={{ background: '#FFF0F3', border: '0.5px solid #E8C0CC' }}>
+        <img src="/logo.png" alt="Bot typing" className="w-full h-full object-cover" />
       </div>
       <div
         style={{

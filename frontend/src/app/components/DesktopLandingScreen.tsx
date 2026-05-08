@@ -15,14 +15,12 @@ export function DesktopLandingScreen({ onStart }: DesktopLandingScreenProps) {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <motion.div
-          className="w-20 h-20 rounded-full flex items-center justify-center mb-8 shadow-sm"
+        <div
+          className="w-20 h-20 rounded-full flex items-center justify-center mb-6 shadow-sm overflow-hidden"
           style={{ background: '#FFF0F3', border: '1.5px solid #D4537E' }}
-          whileHover={{ scale: 1.1, rotate: 10 }}
-          transition={{ type: "spring", stiffness: 300 }}
         >
-          <span className="text-4xl">🪷</span>
-        </motion.div>
+          <img src="/logo.png" alt="Amaanitvam Logo" className="w-full h-full object-cover" />
+        </div>
         
         <h1
           className="text-5xl xl:text-6xl font-bold text-[#6B1A35] leading-tight mb-6"
@@ -41,7 +39,7 @@ export function DesktopLandingScreen({ onStart }: DesktopLandingScreenProps) {
           whileHover={{ scale: 1.05, boxShadow: "0px 10px 20px rgba(107, 26, 53, 0.3)" }}
           whileTap={{ scale: 0.95 }}
         >
-          Talk to Amaani <span className="text-xl">🪷</span>
+          Talk to Amaani
         </motion.button>
       </motion.div>
 

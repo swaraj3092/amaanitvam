@@ -51,7 +51,7 @@ export function ChatScreen({ onVolunteerClick }: ChatScreenProps) {
                   }}
                 >
                   <motion.div variants={chipVariants} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                    <QuickChip label="About us" icon="🪷" onClick={() => sendMessage("Tell me about the foundation")} />
+                    <QuickChip label="About us" icon="ℹ️" onClick={() => sendMessage("Tell me about the foundation")} />
                   </motion.div>
                   <motion.div variants={chipVariants} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                     <QuickChip label="Shiksha" onClick={() => sendMessage("What is the Shiksha project?")} />

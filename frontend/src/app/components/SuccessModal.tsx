@@ -55,8 +55,10 @@ export function SuccessModal({ onClose }: SuccessModalProps) {
           />
         </div>
 
-        <div className="flex flex-col items-center pt-6 text-center">
-          <div className="text-5xl mb-4">🪷</div>
+        <div className="flex flex-col items-center text-center">
+          <div className="w-16 h-16 rounded-full flex items-center justify-center mb-4 overflow-hidden" style={{ background: '#FFF0F3', border: '1.5px solid #D4537E' }}>
+            <img src="/logo.png" alt="Logo" className="w-full h-full object-cover" />
+          </div>
 
           <h2
             className="mb-2"
