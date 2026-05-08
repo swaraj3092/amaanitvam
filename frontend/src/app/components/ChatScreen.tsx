@@ -29,7 +29,7 @@ export function ChatScreen({ onVolunteerClick }: ChatScreenProps) {
     <div className="w-full h-full flex flex-col" style={{ background: '#FFF8F5' }}>
       <TopBar />
 
-      <div className="flex-1 overflow-y-auto p-4">
+      <div className="flex-1 overflow-y-auto p-4 min-h-0">
         {messages.map((msg, index) => (
           <div key={index} className="mb-4">
             {msg.role === 'bot' ? (

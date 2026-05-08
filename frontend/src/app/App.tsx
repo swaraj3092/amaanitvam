@@ -40,13 +40,18 @@ export default function App() {
   };
 
   useEffect(() => {
+    // Force reset any accidental browser scrolling that might hide the TopBar
+    window.scrollTo(0, 0);
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+    
     const handleNav = (e: any) => handleNavigate(e.detail);
     window.addEventListener('navigate', handleNav);
     return () => window.removeEventListener('navigate', handleNav);
   }, []);
 
   return (
-    <div className="w-full h-screen flex relative overflow-hidden" style={{ background: '#FFF8F5' }}>
+    <div className="w-full h-[100dvh] flex relative overflow-hidden" style={{ background: '#FFF8F5' }}>
       {isMobile ? (
         /* Mobile Layout - No Sidebar */
         <div className="flex-1 h-full">

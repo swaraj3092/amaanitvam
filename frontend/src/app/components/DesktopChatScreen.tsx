@@ -30,7 +30,7 @@ export function DesktopChatScreen({ onVolunteerClick }: DesktopChatScreenProps) 
       <div className="w-full h-full flex flex-col px-4 md:px-8 lg:px-16">
         <TopBar />
 
-        <div className="flex-1 overflow-y-auto p-4" style={{ gap: '16px' }}>
+        <div className="flex-1 overflow-y-auto p-4 min-h-0" style={{ gap: '16px' }}>
           {messages.map((msg, index) => (
             <div key={index} className="mb-4">
               {msg.role === 'bot' ? (
