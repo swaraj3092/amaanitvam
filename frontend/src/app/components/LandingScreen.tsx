@@ -1,5 +1,6 @@
 import { ProjectCard } from './ProjectCard';
 import { motion } from 'framer-motion';
+import { Sparkles } from 'lucide-react';
 
 interface LandingScreenProps {
   onStart: () => void;
@@ -17,14 +18,13 @@ export function LandingScreen({ onStart }: LandingScreenProps) {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        <motion.div
-          className="w-24 h-24 rounded-full flex items-center justify-center mb-4 shadow-sm overflow-hidden"
-          style={{ background: '#FFF0F3', border: '1.5px solid #D4537E' }}
-          whileHover={{ scale: 1.1, rotate: 10 }}
-          transition={{ type: "spring", stiffness: 300 }}
+        <div 
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
+          style={{ background: '#FFF0F3', color: '#D4537E', fontSize: '14px', fontWeight: 600, border: '1px solid #E8C0CC' }}
         >
-          <img src="/logo.png" alt="Amaanitvam Logo" className="w-full h-full object-cover" />
-        </motion.div>
+          <Sparkles size={16} />
+          <span>Meet Amaani, the AI Guide</span>
+        </div>
 
         <h1
           className="text-center mb-2"
