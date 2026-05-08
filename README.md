@@ -1,6 +1,6 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/lucide-icons/lucide/main/icons/flower-2.svg" alt="Logo" width="80" height="80">
-  <h1 align="center">Amaanitvam Foundation 🪷</h1>
+  <img src="frontend/public/logo.png" alt="Amaanitvam Logo" width="100" height="100">
+  <h1 align="center">Amaanitvam Foundation</h1>
   <p align="center">
     <strong>An AI-Powered NGO Chatbot & Landing Page</strong>
   </p>
