@@ -28,13 +28,13 @@ export function Sidebar({ onNavigate }: SidebarProps) {
       {/* Logo Section */}
       <div className="pt-10 pb-14 flex flex-col items-center">
         <div
-          className="w-16 h-16 rounded-full flex items-center justify-center mb-4"
+          className="w-16 h-16 rounded-full flex items-center justify-center mb-4 overflow-hidden"
           style={{
             background: '#FFF0F3',
             border: '0.5px solid #E8C0CC'
           }}
         >
-          <span className="text-3xl">🪷</span>
+          <img src="/logo.png" alt="Amaanitvam Logo" className="w-full h-full object-cover" />
         </div>
         <div
           style={{

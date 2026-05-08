@@ -27,8 +27,8 @@ export function TopBar() {
       style={{ background: '#FFFFFF', borderBottom: '0.5px solid #E8C0CC' }}
     >
       <div className="flex items-center gap-2">
-        <div className="w-8 h-8 rounded-full flex items-center justify-center shrink-0" style={{ background: '#FFF0F3', border: '0.5px solid #E8C0CC' }}>
-          <span className="text-base">🪷</span>
+        <div className="w-8 h-8 rounded-full flex items-center justify-center shrink-0 overflow-hidden" style={{ background: '#FFF0F3', border: '0.5px solid #E8C0CC' }}>
+          <img src="/logo.png" alt="Logo" className="w-full h-full object-cover" />
         </div>
         <div>
           <div style={{ fontSize: '14px', fontWeight: 500, color: '#6B1A35', lineHeight: '1.2' }}>

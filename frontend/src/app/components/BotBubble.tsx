@@ -72,8 +72,8 @@ export function BotBubble({ message, timestamp }: BotBubbleProps) {
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ type: "spring", stiffness: 300, damping: 24 }}
     >
-      <div className="w-8 h-8 rounded-full flex items-center justify-center shrink-0" style={{ background: '#FFF0F3', border: '0.5px solid #E8C0CC' }}>
-        <span className="text-base">🪷</span>
+      <div className="w-8 h-8 rounded-full flex items-center justify-center shrink-0 overflow-hidden" style={{ background: '#FFF0F3', border: '0.5px solid #E8C0CC' }}>
+        <img src="/logo.png" alt="Bot" className="w-full h-full object-cover" />
       </div>
       <div className="flex flex-col" style={{ maxWidth: '75%' }}>
         <div
