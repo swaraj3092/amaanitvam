@@ -37,7 +37,7 @@ export function InputBar({ onSend, isLoading }: InputBarProps) {
 
   return (
     <div
-      className="h-[72px] flex items-center px-4"
+      className="h-[72px] shrink-0 flex items-center px-4"
       style={{ background: '#FFF8F5', borderTop: '0.5px solid #E8C0CC' }}
     >
       <div

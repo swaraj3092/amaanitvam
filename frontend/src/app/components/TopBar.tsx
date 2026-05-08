@@ -39,7 +39,7 @@ export function TopBar() {
 
   return (
     <div
-      className="h-[60px] flex items-center px-4 justify-between relative"
+      className="h-[60px] shrink-0 flex items-center px-4 justify-between relative"
       style={{ background: '#FFFFFF', borderBottom: '0.5px solid #E8C0CC', zIndex: 50 }}
     >
       <div className="flex items-center gap-2">
