@@ -43,30 +43,7 @@ export function VolunteerModal({ onClose, onSubmit }: VolunteerModalProps) {
           <X size={18} />
         </button>
 
-        {/* Handle bar */}
-        <div
-          className="w-10 h-1 mx-auto mb-3"
-          style={{
-            background: '#E8C0CC',
-            borderRadius: '999px'
-          }}
-        />
 
-        {/* Progress indicator */}
-        <div className="flex justify-center gap-2 mb-6">
-          <div
-            className="w-2 h-2 rounded-full"
-            style={{ background: '#6B1A35' }}
-          />
-          <div
-            className="w-2 h-2 rounded-full"
-            style={{ background: '#E8C0CC' }}
-          />
-          <div
-            className="w-2 h-2 rounded-full"
-            style={{ background: '#E8C0CC' }}
-          />
-        </div>
 
         <h2
           className="mb-2"
