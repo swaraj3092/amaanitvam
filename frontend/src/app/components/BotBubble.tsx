@@ -9,6 +9,7 @@ interface BotBubbleProps {
 
 export function BotBubble({ message, timestamp }: BotBubbleProps) {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [displayedText, setDisplayedText] = useState('');
   const displayTime = timestamp || new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
   useEffect(() => {
@@ -16,6 +17,22 @@ export function BotBubble({ message, timestamp }: BotBubbleProps) {
       window.speechSynthesis.cancel();
     };
   }, []);
+
+  useEffect(() => {
+    // Reset or start typewriter
+    let i = 0;
+    setDisplayedText('');
+    const interval = setInterval(() => {
+      if (i < message.length) {
+        setDisplayedText(message.slice(0, i + 1));
+        i++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 15); // Fast typing speed
+
+    return () => clearInterval(interval);
+  }, [message]);
 
   const toggleSpeech = () => {
     if (isPlaying) {
@@ -86,7 +103,7 @@ export function BotBubble({ message, timestamp }: BotBubbleProps) {
             lineHeight: '1.6',
             color: '#3A0A1A'
           }}
-          dangerouslySetInnerHTML={formatMarkdown(message)}
+          dangerouslySetInnerHTML={formatMarkdown(displayedText)}
         />
         <div className="mt-2 flex items-center gap-2">
           <div
