@@ -55,13 +55,16 @@ export function DonateScreen() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
             >
-              <button 
+              <a 
+                href="https://amaanitvam.org" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full py-4 rounded-xl flex items-center justify-center gap-2 group transition-all"
                 style={{ background: '#6B1A35', color: 'white', fontSize: '18px', fontWeight: 500 }}
               >
                 Donate via Secure Gateway
                 <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-              </button>
+              </a>
               
               <p className="text-xs" style={{ color: '#D4537E' }}>
                 100% Secure. Tax-deductible under 80G.
