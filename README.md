@@ -85,9 +85,13 @@ npm run dev
 
 ## 📸 Project Screenshots
 
-*(Add your screenshots here! Example:)*
-> `![Home Screen Desktop](./screenshots/home.png)`
-> `![Chat Interface Mobile](./screenshots/chat.png)`
+<p align="center">
+  <img src="./screenshots/home.png" alt="Amaanitvam Desktop Home Screen" width="800" />
+</p>
+
+<p align="center">
+  <img src="./screenshots/chat.png" alt="Amaanitvam Chat Interface" width="800" />
+</p>
 
 ---
 
