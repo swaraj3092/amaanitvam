@@ -73,8 +73,6 @@ export function TopBar() {
               exit={{ opacity: 0, y: -10, scale: 0.95 }}
               transition={{ duration: 0.15, ease: "easeOut" }}
             >
-              {isMobile && (
-                <>
                   <div className="px-4 py-2 text-xs font-bold tracking-wider text-pink-400 uppercase">
                     Navigation
                   </div>
@@ -89,8 +87,6 @@ export function TopBar() {
                     </button>
                   ))}
                   <div className="h-px bg-pink-100 my-2"></div>
-                </>
-              )}
 
               <div className="px-4 py-2 text-xs font-bold tracking-wider text-pink-400 uppercase">
                 Settings
